@@ -1,0 +1,44 @@
+{
+  "name": "acando-npm-react-context-starter",
+  "version": "1.0.0",
+  "description": "A starting point to create an NPM module that uses the provider / consumer pattern with React context.",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AcandoCxc/acando-npm-react-context-starter.git"
+  },
+  "scripts": {
+    "clean": "rimraf lib es",
+    "compile": "npm run compile:commonjs && npm run compile:es",
+    "compile:commonjs": "cross-env BABEL_ENV=commonjs babel modules --out-dir lib",
+    "compile:es": "cross-env BABEL_ENV=es babel modules --out-dir es --ignore test.js",
+    "prepublish": "npm run compile"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0-0 || ^16.0.0-0"
+  },
+  "author": "Erik Hellman",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.4",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.0",
+    "babel-plugin-transform-export-extensions": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-react-jsx": "6.24.1",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.13",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "cross-env": "5.0.5",
+    "prop-types": "15.6.1",
+    "rimraf": "2.6.1",
+    "webpack": "^2.6.1"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "2.5.0",
+    "create-react-context": "0.2.1"
+  }
+}
